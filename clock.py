@@ -10,6 +10,7 @@ from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT
 from random import randrange
 
 
+
 def minute_change(device):
     '''When we reach a minute change, animate it.'''
     hours = datetime.now().strftime('%H')

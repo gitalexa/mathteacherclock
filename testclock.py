@@ -9,6 +9,8 @@ from datetime import datetime
 #from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT
 from random import randrange
 
+from TestClass import MyClass, Person
+
 
 def minute_change(device):
     '''When we reach a minute change, animate it.'''
@@ -82,6 +84,14 @@ def main():
                 #text(draw, (17, 1), minutes, fill="white", font=proportional(TINY_FONT))
 
                 #text(draw, (17, 9), minutes, fill="white", font=proportional(TINY_FONT))
+
+            p1 = MyClass()
+            print(p1.x)
+
+            p1 = Person("John", 36)
+
+            print(p1.name)
+            print(p1.age)
 
             print(randrange(10))
             rmin = randrange(1, 59)

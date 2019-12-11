@@ -25,3 +25,12 @@ Benötigt werden
 LCD-Matrix und ein Raspberry Pi
 
 
+Als Betriebssystem habe ich das hier genommen:
+
+https://downloads.raspberrypi.org/raspbian/images/raspbian-2018-11-15/
+
+
+dann über raspi-config SPI einschalten
+
+
+

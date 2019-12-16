@@ -37,6 +37,10 @@ class main():
         def creating_sticks(self):
                 return
 
+        def set_calc_mode(self, new_calc_mode):
+                if new_calc_mode > -1 and new_calc_mode < 3:
+                        self.calc_mode = new_calc_mode
+
 
         def set_minute_string(self, which_minute):
                 rng_number = 0
@@ -65,6 +69,8 @@ class main():
                 hour = int(time.strftime("%I", t)) * 5
                 now = (hour, now.tm_min, now.tm_sec)
 
+                # strichrechnug - siehe oben bei der defintion der variable
+                self.set_calc_mode(0)
                 now2 = datetime.now()
                 print("%s/%s/%s %s:%s:%s" % (now2.month, now2.day, now2.year, now2.hour, now2.minute, now2.second))
                 self.set_minute_string(now2.minute)

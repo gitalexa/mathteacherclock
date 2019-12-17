@@ -41,26 +41,62 @@ class main():
                 if new_calc_mode > -1 and new_calc_mode < 3:
                         self.calc_mode = new_calc_mode
 
-
         def set_minute_string(self, which_minute):
-                rng_number = 0
+                # strichrechnung
                 if self.calc_mode == 0:
-                        rng_number = random.randrange(1, 99)
-                        while rng_number == which_minute:
-                                rng_number = random.randrange(1, 99)
-                        if rng_number > which_minute:
-                                self.minute_string = str(rng_number) + ' - ' + str(rng_number - which_minute)
-                        else:
-                                self.minute_string = str(rng_number) + ' + ' + str(which_minute - rng_number)
+                        self.minute_string = self.line_calculation(which_minute)
+                # punktrechnung
                 elif self.calc_mode == 1:
-                        if which_minute != 0:
-                                rng_number = random.randrange(1, which_minute)
-                                if rng_number != 0:
-                                        while which_minute % rng_number != 0:
-                                                rng_number = random.randrange(1, which_minute)
-                                if rng_number != 0:
-                                         self.minute_string = str(rng_number) + ' * ' + str(which_minute / rng_number)
+                        self.minute_string = self.point_calculation(which_minute)
+                elif self.calc_mode == 2:
+                        rng_calc_mode = random.randrange(0, 2)
+                        if rng_calc_mode == 1:
+                                self.minute_string = self.line_calculation(which_minute)
+                        else:
+                                self.minute_string = self.point_calculation(which_minute)
                 return
+
+        def set_hour_string(self, which_hour):
+                # strichrechnung
+                if self.calc_mode == 0:
+                        self.hour_string = self.line_calculation(which_hour)
+                # punktrechnung
+                elif self.calc_mode == 1:
+                        self.hour_string = self.point_calculation(which_hour)
+                elif self.calc_mode == 2:
+                        rng_calc_mode = random.randrange(0, 2)
+                        if rng_calc_mode == 1:
+                                self.hour_string = self.line_calculation(which_hour)
+                        else:
+                                self.hour_string = self.point_calculation(which_hour)
+                return
+
+        def point_calculation(self, which_minute_or_hour):
+                if which_minute_or_hour != 0:
+                        # 0 heißt mal
+                        # 1 heißt geteilt
+                        which_point_calc_mode = random.randrange(0, 2)
+                        if which_point_calc_mode == 0:
+                                rng_number = random.randrange(1, which_minute_or_hour)
+                                if rng_number != 0:
+                                        while which_minute_or_hour % rng_number != 0:
+                                                rng_number = random.randrange(1, which_minute_or_hour)
+                                if rng_number != 0:
+                                        return str(rng_number) + ' * ' + str(which_minute_or_hour / rng_number)
+                        elif which_point_calc_mode == 1:
+                                rng_number = random.randrange(1, 11)
+                                return str(which_minute_or_hour * rng_number) + ' : ' + str(rng_number)
+                elif which_minute_or_hour == 0:
+                        return str('0 * 0')
+
+        def line_calculation(self, which_minute_or_hour):
+                rng_number = random.randrange(1, 99)
+                while rng_number == which_minute_or_hour:
+                        rng_number = random.randrange(1, 99)
+                if rng_number > which_minute_or_hour:
+                        return str(rng_number) + ' - ' + str(rng_number - which_minute_or_hour)
+                else:
+                        return str(rng_number) + ' + ' + str(which_minute_or_hour - rng_number)
 
         # Function Need Regular Update
         def update_class(self):
@@ -70,11 +106,13 @@ class main():
                 now = (hour, now.tm_min, now.tm_sec)
 
                 # strichrechnug - siehe oben bei der defintion der variable
-                self.set_calc_mode(0)
+                self.set_calc_mode(2)
                 now2 = datetime.now()
                 print("%s/%s/%s %s:%s:%s" % (now2.month, now2.day, now2.year, now2.hour, now2.minute, now2.second))
+                self.set_hour_string(now2.hour)
                 self.set_minute_string(now2.minute)
-                print(self.minute_string)
+                print(self.hour_string + ' h')
+                print(self.minute_string + 'min ')
                 time.sleep(1)
 
                 # Changing Stick Coordinates

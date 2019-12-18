@@ -38,7 +38,11 @@ dann über raspi-config SPI einschalten
 
 
 Sudo apt-get install git-core
+
 sudo apt-get install python-setuptools
+
+https://luma-led-matrix.readthedocs.io/en/latest/install.html#installing-from-pypi
+
 
 
 

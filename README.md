@@ -43,6 +43,9 @@ sudo apt-get install python-setuptools
 
 https://luma-led-matrix.readthedocs.io/en/latest/install.html#installing-from-pypi
 
+https://github.com/rm-hull/luma.led_matrix/issues/104
+
+
 
 
 

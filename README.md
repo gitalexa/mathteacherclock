@@ -34,3 +34,11 @@ dann über raspi-config SPI einschalten
 
 
 
+
+
+
+Sudo apt-get install git-core
+
+
+
+

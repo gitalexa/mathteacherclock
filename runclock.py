@@ -18,8 +18,8 @@ def main():
         c = clock()
         c.update_class(2)
         with canvas(device) as draw:
-            text(draw, (2, 1), "123", fill="white", font=proportional(TINY_FONT))
-            text(draw, (4, 9), "333", fill="white", font=proportional(TINY_FONT))
+            text(draw, (2, 1), c.hour_string, fill="white", font=proportional(TINY_FONT))
+            text(draw, (4, 9), c.minute_string, fill="white", font=proportional(TINY_FONT))
 
 
 if __name__ == "__main__":

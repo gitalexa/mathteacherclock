@@ -9,7 +9,7 @@ def main():
     for line in data:
         print line
 
-    # parse an xml file by name
+    # parse an xml file by name www
     mydoc = minidom.parse('clockini.xml')
 
     items = mydoc.getElementsByTagName('item')

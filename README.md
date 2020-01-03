@@ -3,7 +3,7 @@
 
 Hier geht es um ein python-script, das ein Uhr anzeigen soll. Dabei werden die Stunden und MInuten jeweils als Matheaufgabe angezeigt.
 
-
+a
 Grundlage ist das Git-Projekt: https://github.com/rm-hull/max7219 mit dem die Ansteuerung der LED-Matrixen durchgeführt wird.
 
 

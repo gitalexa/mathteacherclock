@@ -42,7 +42,7 @@ class main():
                         self.calc_mode = new_calc_mode
 
         def set_minute_string(self, which_minute):
-                # ß strichrechnung
+                #  strichrechnung
                 if self.calc_mode == 0:
                         self.minute_string = self.line_calculation(which_minute)
                 # punktrechnung
@@ -73,8 +73,8 @@ class main():
 
         def point_calculation(self, which_minute_or_hour):
                 if which_minute_or_hour != 0:
-                        # 0 heißt mal
-                        # 1 heißt geteilt
+                        # 0 heisst mal
+                        # 1 heisst geteilt
                         which_point_calc_mode = random.randrange(0, 2)
                         if which_point_calc_mode == 0:
                                 rng_number = random.randrange(1, which_minute_or_hour)

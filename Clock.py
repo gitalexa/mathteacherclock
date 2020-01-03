@@ -16,9 +16,9 @@ class main():
 
         minute_string = str(' ')
         hour_string = str(' ')
-        # 0 heisst strichrechnung
-        # 1 heisst punktrechnung
-        # 2 heisst kombination
+        # 0 heißt strichrechnung
+        # 1 heißt punktrechnung
+        # 2 heißt kombination
         calc_mode = 1
 
         # Creating Trigger For Other Functions
@@ -42,7 +42,7 @@ class main():
                         self.calc_mode = new_calc_mode
 
         def set_minute_string(self, which_minute):
-                # strichrechnung
+                # ß strichrechnung
                 if self.calc_mode == 0:
                         self.minute_string = self.line_calculation(which_minute)
                 # punktrechnung
@@ -73,8 +73,8 @@ class main():
 
         def point_calculation(self, which_minute_or_hour):
                 if which_minute_or_hour != 0:
-                        # 0 heisst mal
-                        # 1 heisst geteilt
+                        # 0 heißt mal
+                        # 1 heißt geteilt
                         which_point_calc_mode = random.randrange(0, 2)
                         if which_point_calc_mode == 0:
                                 rng_number = random.randrange(1, which_minute_or_hour)
@@ -99,20 +99,20 @@ class main():
                         return str(rng_number) + ' + ' + str(which_minute_or_hour - rng_number)
 
         # Function Need Regular Update
-        def update_class(self, mode):
+        def update_class(self):
                 now = time.localtime()
                 t = time.strptime(str(now.tm_hour), "%H")
                 hour = int(time.strftime("%I", t)) * 5
                 now = (hour, now.tm_min, now.tm_sec)
 
                 # strichrechnug - siehe oben bei der defintion der variable
-                self.set_calc_mode(mode)
+                self.set_calc_mode(2)
                 now2 = datetime.now()
                 print("%s/%s/%s %s:%s:%s" % (now2.month, now2.day, now2.year, now2.hour, now2.minute, now2.second))
                 self.set_hour_string(now2.hour)
                 self.set_minute_string(now2.minute)
                 print(self.hour_string + ' h')
-                print(self.minute_string + ' min ')
+                print(self.minute_string + 'min ')
                 time.sleep(1)
 
                 # Changing Stick Coordinates
@@ -125,4 +125,4 @@ if __name__ == '__main__':
 
         # Creating Main Loop
         while True:
-                root.update_class(2)
+                root.update_class()

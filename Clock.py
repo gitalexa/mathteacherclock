@@ -16,9 +16,9 @@ class main():
 
         minute_string = str(' ')
         hour_string = str(' ')
-        # 0 heißt strichrechnung
-        # 1 heißt punktrechnung
-        # 2 heißt kombination
+        # 0 heisst strichrechnung
+        # 1 heisst punktrechnung
+        # 2 heisst kombination
         calc_mode = 1
 
         # Creating Trigger For Other Functions

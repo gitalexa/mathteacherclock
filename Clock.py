@@ -99,14 +99,14 @@ class main():
                         return str(rng_number) + ' + ' + str(which_minute_or_hour - rng_number)
 
         # Function Need Regular Update
-        def update_class(self):
+        def update_class(self, calc_mode):
                 now = time.localtime()
                 t = time.strptime(str(now.tm_hour), "%H")
                 hour = int(time.strftime("%I", t)) * 5
                 now = (hour, now.tm_min, now.tm_sec)
 
                 # strichrechnug - siehe oben bei der defintion der variable
-                self.set_calc_mode(2)
+                self.set_calc_mode(calc_mode)
                 now2 = datetime.now()
                 print("%s/%s/%s %s:%s:%s" % (now2.month, now2.day, now2.year, now2.hour, now2.minute, now2.second))
                 self.set_hour_string(now2.hour)

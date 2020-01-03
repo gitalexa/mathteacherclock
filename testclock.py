@@ -24,17 +24,17 @@ def main():
     # The time ascends from the abyss...
     #animation(device, 8, 1)
 
-    if __name__ == '__main__':
-        root = main()
+
 
         # Creating Main Loop
         while True:
-            root.update_class(2)
+            c = clock()
+            c.update_class(2)
             # with canvas(device) as draw:
             # text(draw, (0, current_y), hourstime, fill="white", font=proportional(TINY_FONT))
             # text(draw, (15, current_y), ":", fill="white", font=proportional(TINY_FONT))
             # text(draw, (17, current_y), mintime, fill="white", font=proportional(TINY_FONT))
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    root = main()

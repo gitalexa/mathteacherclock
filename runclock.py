@@ -10,7 +10,7 @@ def main():
         # Setup for Banggood version of 4 x 8x8 LED Matrix (https://bit.ly/2Gywazb)
         serial = spi(port=0, device=0, gpio=noop())
         # device = max7219(serial, cascaded=8, block_orientation=-90, blocks_arranged_in_reverse_ord$
-        device = max7219(serial, width=32, height=16, block_orientation=-90, rotate=0)
+        device = max7219(serial, width=64, height=8, block_orientation=-90, rotate=0)
 
         # device.contrast(16)
         while True:

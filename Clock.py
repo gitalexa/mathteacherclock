@@ -4,6 +4,7 @@
 import math  # Required For Coordinates Calculation
 import time  # Required For Time Handling
 from datetime import datetime
+#import pytz
 import random
 
 
@@ -59,16 +60,16 @@ class main():
         def set_hour_string(self, which_hour):
                 # strichrechnung
                 if self.calc_mode == 0:
-                        self.hour_string = self.line_calculation(which_hour)
+                        self.hour_string = self.line_calculation(which_hour + 1)
                 # punktrechnung
                 elif self.calc_mode == 1:
-                        self.hour_string = self.point_calculation(which_hour)
+                        self.hour_string = self.point_calculation(which_hour + 1)
                 elif self.calc_mode == 2:
                         rng_calc_mode = random.randrange(0, 2)
                         if rng_calc_mode == 1:
-                                self.hour_string = self.line_calculation(which_hour)
+                                self.hour_string = self.line_calculation(which_hour + 1)
                         else:
-                                self.hour_string = self.point_calculation(which_hour)
+                                self.hour_string = self.point_calculation(which_hour + 1) #+1 weil wir zu doof waren, die zeitzone zu implementiren
                 return
 
         def point_calculation(self, which_minute_or_hour):

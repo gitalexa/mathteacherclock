@@ -11,11 +11,17 @@ import time
 # tz = pytz.timezone('Europe/Berlin')
 # berlin_now = datetime.now(tz)
 
+def init():
+        serialinit = spi(port=0, device=0, gpio=noop(), bus_speed_hz=500000)
+        deviceinit = max7219(serialinit, width=64, height=16, block_orientation=-90, rotate=0)
+        deviceinit.cleanup()
 
 
 def main():
+        init()
+        time.sleep(1)
         # Setup for Banggood version of 4 x 8x8 LED Matrix (https://bit.ly/2Gywazb)
-        serial = spi(port=0, device=0, gpio=noop())
+        serial = spi(port=0, device=0, gpio=noop(), bus_speed_hz=500000)
         # device = max7219(serial, cascaded=8, block_orientation=-90, blocks_arranged_in_reverse_order)
         device = max7219(serial, width=64, height=16, block_orientation=-90, rotate=0)
 
@@ -25,11 +31,10 @@ def main():
                 c.update_class(2)
                 with canvas(device) as draw:
                         text(draw, (2, 1), c.hour_string, fill="white", font=proportional(CP437_FONT))
-                        text(draw, (2, 9), c.minute_string, fill="white", font=proportional(CP437_FONT)) 
+                        text(draw, (2, 9), c.minute_string, fill="white", font=proportional(CP437_FONT))
 
- 			text(draw, (55, 1), "h", fill="white", font=proportional(TINY_FONT))	
-			text(draw, (55, 9), "min", fill="white", font=proportional(TINY_FONT)) 		
-			time.sleep(10)
+                        text(draw, (55, 1), "h", fill="white", font=proportional(TINY_FONT))
+                        text(draw, (55, 9), "min", fill="white", font=proportional(TINY_FONT))
+                        time.sleep(3)
 if __name__ == "__main__":
         main()
-

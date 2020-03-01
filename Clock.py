@@ -69,7 +69,7 @@ class main():
                         if rng_calc_mode == 1:
                                 self.hour_string = self.line_calculation(which_hour + 1)
                         else:
-                                self.hour_string = self.point_calculation(which_hour + 1) #+1 weil wir zu doof waren, die zeitzone zu implementiren
+                                self.hour_string = self.point_calculation(which_hour + 1) #+1 weil wir zu doof waren, die zeitzone zu implementieren
                 return
 
         def point_calculation(self, which_minute_or_hour):
@@ -111,6 +111,7 @@ class main():
                 self.set_calc_mode(calc_mode)
                 now2 = datetime.now()
                 print("%s/%s/%s %s:%s:%s" % (now2.month, now2.day, now2.year, now2.hour, now2.minute, now2.second))
+                print("%s --- %s" % (now2.hour, now2.minute))
                 self.set_hour_string(now2.hour)
                 self.set_minute_string(now2.minute)
                 #print(self.hour_string + ' h')

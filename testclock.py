@@ -31,11 +31,9 @@ def main():
         while True:
             c = clock()
             c.update_class(2)
-            # with canvas(device) as draw:
-            # text(draw, (0, current_y), hourstime, fill="white", font=proportional(TINY_FONT))
-            # text(draw, (15, current_y), ":", fill="white", font=proportional(TINY_FONT))
-            # text(draw, (17, current_y), mintime, fill="white", font=proportional(TINY_FONT))
+            print("%s - %s" % (c.hour_string, c.minute_string))
             time.sleep(3)
+
 
 if __name__ == '__main__':
     root = main()

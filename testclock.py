@@ -8,6 +8,7 @@
 #from luma.core.legacy.font import proportional, CP437_FONT, TINY_FONT
 
 from Clock import main as clock
+import time
 
 
 
@@ -34,7 +35,7 @@ def main():
             # text(draw, (0, current_y), hourstime, fill="white", font=proportional(TINY_FONT))
             # text(draw, (15, current_y), ":", fill="white", font=proportional(TINY_FONT))
             # text(draw, (17, current_y), mintime, fill="white", font=proportional(TINY_FONT))
-
+            time.sleep(3)
 
 if __name__ == '__main__':
     root = main()

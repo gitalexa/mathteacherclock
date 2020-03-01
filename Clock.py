@@ -79,7 +79,7 @@ class main():
                         which_point_calc_mode = random.randrange(0, 2)
                         if which_point_calc_mode == 0:
                                 rng_number = random.randrange(0, which_minute_or_hour)
-                                print(which_minute_or_hour)
+                                #print(which_minute_or_hour)
                                 if rng_number != 0:
                                         while which_minute_or_hour % rng_number != 0:
                                                 rng_number = random.randrange(1, which_minute_or_hour)
@@ -113,9 +113,9 @@ class main():
                 print("%s/%s/%s %s:%s:%s" % (now2.month, now2.day, now2.year, now2.hour, now2.minute, now2.second))
                 self.set_hour_string(now2.hour)
                 self.set_minute_string(now2.minute)
-                print(self.hour_string + ' h')
-                print(self.minute_string + 'min ')
-                time.sleep(30)
+                #print(self.hour_string + ' h')
+                #print(self.minute_string + 'min ')
+                #time.sleep(30)
 
                 # Changing Stick Coordinates
                 return
